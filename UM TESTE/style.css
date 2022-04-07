@@ -1,7 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
     font-family: monospace;
     background-color: white;
+}
+
+.container {
+    width: 75vw;
+    margin: 0 auto;
+    padding: 0;
 }
 
 /* HEADER */
@@ -11,47 +22,48 @@ body {
     padding: 7px;
 }
 
-header .container {
+header {
+    display: flex;
+    flex-direction: row;
     background-color: white;
     border-bottom: 1px solid black;
     color: gray;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
     align-items: center;
-
+    justify-content: space-between;
 }
 
-.container ul {
+header ul {
     display: flex;
     flex-direction: row;
     list-style: none;
     width: 600px;
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-size: 18px;
 
 }
 
 /* BANNER */
 
-.banner {
-    height: 500px;
+#banner {
     background-image: url('banner.png');
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    margin-top: 0;
+    padding: 10rem 0;
 }
 
-
-.banner h1 {
+#banner .conteudo {
     display: flex;
-    width: 400px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 150px;
-    margin-left: 750px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: end;
+}   
 
+.conteudo-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#banner h1 {
     color: white;
     font-family: 'Saira';
     font-style: normal;
@@ -59,32 +71,21 @@ header .container {
     font-size: 60px;
     line-height: 70px;
     text-align: center;
-
 }
 
-.banner #button {
-    display: flex;
-    width: 200px;
+#banner #button {
     height: 50px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    margin-left: 850px;
     background-color: Transparent;
     border: none;
-
-
     color: #158FCF;
     font-family: 'Saira';
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
     line-height: 76px;
-
-    text-align: justify;
 }
 
-.banner #button:hover {
+#banner #button:hover {
     background: rgba(0, 217, 255, 0.055);
 }
 
@@ -93,7 +94,6 @@ header .container {
 }
 
 .bottonBanner {
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,72 +102,69 @@ header .container {
 
 /* SOBRE */
 
-.quadrado1 {
-    display: inline-block;
-    background-color: #158FCF;
-    width: 370px;
-    height: 400px;
-    margin: 10px;
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px 0;
-
-
-}
-
-.sobre {
+/* #sobre {
     margin: 0 auto;
-    width: 60%;
+} */
+
+.cards-sobre {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
+    justify-content: space-evenly;
 }
 
-.quadrado1 .imagem {
-    width: 25%;
+.quadrado {
     display: flex;
-    margin-top: 20px;
-    margin-left: 135px;
-    
-
+    flex-direction: column;
+    background-color: #158FCF;
+    margin: 30px 0;
+    height: 30rem;
+    border-radius: 10px;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    /* display: inline-block;
+    text-align: center;
+     */
 }
 
-.quadrado1 p {
-    width: 350px;
+
+.quadrado .imagem {
+    width: 25%;
+    margin: 10px;
+}
+
+.quadrado ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.quadrado ul li {
+    font-size: 20px;
+    list-style: '- ';
+}
+
+.quadrado p {
     font-family: 'Saira';
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
     text-align: center;
+    /* width: 350px; */
 }
 
-.final .container {
+.final {
     margin-top: 20px;
     background-color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.final .container #logo {
-    width: 70px;
+.final #logo {
+    width: 75px;
     padding: 7px;
 
-}
-
-.final .container .redeSocial {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
-    width: 500px;
-    padding: 10px;
-    margin-right: 150px;
-    margin-top: 15px;
-}
-
-.final .container .redeSocial img {
-    width: 35px;
-    height: 35px;
 }
