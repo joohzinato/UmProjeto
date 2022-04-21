@@ -8,6 +8,7 @@ body {
     margin: 0;
     font-family: monospace;
     background-color: white;
+    height: 100vh;
     
 }
 
@@ -15,9 +16,6 @@ body {
     width: 75vw;
     margin: 0 auto;
     padding: 0;
-    
-    
-
 }
 
 /* HEADER */
@@ -70,6 +68,7 @@ header ul a {
     align-items: center;
     flex-direction: column;
     margin-top: 30px;
+    height: 100vh;
 }
 
 
