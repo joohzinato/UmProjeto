@@ -35,7 +35,8 @@ header {
     color: gray;
     align-items: center;
     justify-content: space-between;
-    /* position: fixed; */
+    border-bottom: 1px solid black;
+
     
 }
 
@@ -150,19 +151,4 @@ header ul a {
     width: 37px;
     /* padding: 10px; */
     margin-top: 25px;
-}
-
-.botao_calculadora {
-margin-top: 20px;
-border: 1px solid black;
-/* width: 10px; */
-background-color: rgba(0, 0, 255, 0.034);
-color: #fdfdfd;
-font-size: 18px;
-border-radius: 10px;
-padding: 10px;
-}
-
-.botao_calculadora:hover {
-    background: rgba(0, 217, 255, 0.178);  
 }
