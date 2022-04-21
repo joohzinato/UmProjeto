@@ -3,58 +3,48 @@
 -- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
 
 /* para workbench - local - desenvolvimento */
-CREATE DATABASE acquatec;
+create database Icelog;
 
-USE acquatec;
+use Icelog;
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
+create table Empresa (
+idEmpresa int primary key auto_increment,
+cnpj varchar(14) not null,
+nomeEmpresa varchar(100) not null,
+emailEmpresa varchar(100) not null,
+cepEmpresa varchar(8) not null,
+numero varchar(10) not null,
+senha varchar(100) not null
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-    descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-); 
+create table Caminhao (
+idCaminhao int primary key auto_increment,
+marca varchar(45),
+nomeCaminhao varchar(45),
+placa char(7),
+fkEmpresa int,
+foreign key (fkEmpresa) references Empresa(idEmpresa)
+);
 
-CREATE TABLE medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	temperatura DECIMAL,
-	umidade DECIMAL,
-	momento DATETIME,
-	fk_aquario INT
+create table Sensor (
+idSensor int primary key auto_increment,
+tipo varchar(20), constraint chkTipo check (tipo in ('temperatura')),
+codigo int,
+dtInstalacao datetime default current_timestamp,
+fkCaminhao int,
+foreign key (fkCaminhao) references Caminhao(idCaminhao)
+);
+
+create table Dados (
+idDados int,
+dtH datetime default current_timestamp,
+temperatura double,
+fkSensor int,
+foreign key (fkSensor) references Sensor(idSensor),
+primary key (fkSensor, idDados)
 );
 
 
 
-
-/* para sql server - remoto - produção */
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-);
-
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-    descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-); 
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	temperatura DECIMAL,
-	umidade DECIMAL,
-	momento DATETIME,
-	fk_aquario INT
-);
 
 
