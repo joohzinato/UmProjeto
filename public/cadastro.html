@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AcquaTec | Cadastro</title>
+
+
+    <script src="./js/funcoes.js"></script>
+
+
+    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!--header inicio-->
+    <!-- <div class="header">
+        <div class="container">
+            <h1 class="titulo">AcquaTec</h1>
+            <ul class="navbar">
+                <li>
+                    <a href="./index.html">
+                        Inicial
+                    </a>
+                </li>
+                <li>
+                    <a href="./simulador.html">Simulador</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="./login.html">Login</a>
+                </li>
+                <li class="agora">
+                    <a href="./cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+    <!--header fim-->
+
+
+    <!-- <div class="banner ">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div class="container tamanho-conteudo">
+            <div class="card medio">
+                <h2>Bem-vindo!</h2>
+                <div class="formulario"> -->
+
+    <!--
+                         Para inserir mais um campo, copie uma das inputs abaixo.
+                         Assim que inserir vá para o script abaixo.
+                     -->
+
+    <!-- <span class="tipo_campo">Nome:</span>
+                    <input id="nome_input" type="text" placeholder="Seu nome">
+
+                    <span class="tipo_campo">E-mail:</span>
+                    <input id="email_input" type="text" placeholder="meuemail@provedor.com">
+
+                    <span class="tipo_campo">Senha:</span>
+                    <input id="senha_input" type="password" placeholder="******">
+
+                    <span class="tipo_campo">Confirmação da Senha:</span>
+                    <input id="confirmacao_senha_input" type="password" placeholder="******">
+
+                    <button class="btn" onclick="cadastrar()">Cadastrar</button>
+
+                </div>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!--footer inicio-->
+    <!-- <div class="footer">
+        <div class="container">
+            <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
+        </div>
+    </div> -->
+    <!--footer fim-->
+
+    <header id="header" class="container">
+        <a href="./index.html"><img id="logo" src="./assets/icon/teste1.png" alt=""></a>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="">Sobre nós</a></li>
+            <li><a href="./simulador.html">Simulador</a></li>
+            <li>|</li>
+            <li><a href="./login.html">Login</a></li>
+            <li class="agora"><a href="./cadastro.html">Cadastro</a></li>
+        </ul>
+    </header>
+
+    <div class="containerLogin">
+        <h2 id="login">Cadastro:</h2>
+        <div class="card">
+            <h4 class="titulo">CNPJ da Empresa:</h4>
+            <input class="ipt" id="ipt_cnpj" type="text" placeholder="Insira o CNPJ">
+
+            <h4 class="titulo">Nome da Empresa:</h4>
+            <input class="ipt" id="ipt_nome" type="text" placeholder="Insira o nome">
+
+            <h4 class="titulo">Email:</h4>
+            <input class="ipt" id="ipt_email" type="email" placeholder="Insira o email">
+
+            <h4 class="titulo">CEP:</h4>
+            <input class="ipt" id="ipt_cep" type="text" placeholder="Insira o CEP">
+
+            <h4 class="titulo">Número:</h4>
+            <input class="ipt" id="ipt_numero" type="text" placeholder="Insira número do local">
+
+            <h4 class="titulo">Senha:</h4>
+            <input class="ipt" id="ipt_senha" type="password" placeholder="Insira sua senha">
+
+            <h4 class="titulo">Confirmação senha:</h4>
+            <input class="ipt" id="ipt_confirSenha" type="password" placeholder="Insira sua senha">
+
+            <button class="btn" onclick="cadastrar()">Cadastrar</button>
+
+        </div>
+
+        <div id="cardErro"></div>
+        <div id="mensagem_erro"></div>
+    </div>
+
+    <!-- <div class="final">
+        <div class="container">
+            <img id="logo" src="../public/img/teste1.png" alt="">
+            <div class="redeSocial">
+                <img class="logo-redeSocial" src="../public/img/logo face.png">
+                <img class="logo-redeSocial" src="../public/img/logo inst.png">
+                <img class="logo-redeSocial" src="../public/img/logo tt.png">
+            </div>
+        </div>
+    </div> -->
+
+
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var cnpjVar = ipt_cnpj.value;
+        var nomeVar = ipt_nome.value;
+        var emailVar = ipt_email.value;
+        var cepVar = ipt_cep.value;
+        var numeroVar = ipt_numero.value;
+        var senhaVar = ipt_senha.value;
+        var senhaConfirVar = ipt_confirSenha.value;
+
+        if (cnpjVar == "" || nomeVar == "" || emailVar == "" || cepVar == "" || numeroVar == "" || senhaVar == "" || senhaConfirVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        if (senhaVar != senhaConfirVar) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "As senhas inseridas devem ser iguais para prosseguir!";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                cnpjServer: cnpjVar,
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                cepServer: cepVar,
+                numeroServer: numeroVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
+                window.location = "login.html";
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
